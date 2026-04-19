@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -23,7 +24,7 @@ public class CartaoService {
     }
 
     @Transactional(readOnly = true)
-    public Cartao findByRenda(BigDecimal renda){
-        return repository.findByRenda(renda);
+    public List<Cartao> findByRenda(BigDecimal renda){
+        return repository.findByRendaLessThanEqual(renda);
     }
 }

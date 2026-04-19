@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 public class CartaoRequestDTO {
 
+    private String nome;
     private String bandeira;
     private BigDecimal renda;
     private BigDecimal limite;

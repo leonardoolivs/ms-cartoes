@@ -10,6 +10,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.math.BigDecimal;
 import java.net.URI;
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -29,8 +30,8 @@ public class CartaoController {
         return ResponseEntity.created(uri).body(cartao);
     }
 
-    @GetMapping
-    public ResponseEntity<Cartao> findByRenda(@RequestParam BigDecimal renda){
+    @GetMapping(params = "renda")
+    public ResponseEntity<List<Cartao>> findByRenda(@RequestParam("renda") BigDecimal renda){
         return ResponseEntity.ok().body(service.findByRenda(renda));
     }
 
