@@ -1,6 +1,5 @@
-package com.curso.dougllas.mscartoes.entities;
+package com.curso.dougllas.mscartoes.dtos;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,15 +7,10 @@ import lombok.NoArgsConstructor;
 import java.math.BigDecimal;
 
 @Data
-@Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "TB_CARTAO")
-public class Cartao {
+public class CartaoRequestDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     private String bandeira;
     private BigDecimal renda;
     private BigDecimal limite;
