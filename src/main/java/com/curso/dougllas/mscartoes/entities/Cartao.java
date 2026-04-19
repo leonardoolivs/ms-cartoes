@@ -1,5 +1,6 @@
 package com.curso.dougllas.mscartoes.entities;
 
+import com.curso.dougllas.mscartoes.entities.enums.BandeiraCartao;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,7 +18,9 @@ public class Cartao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String bandeira;
+    private String nome;
+    @Enumerated(EnumType.STRING)
+    private BandeiraCartao bandeira;
     private BigDecimal renda;
     private BigDecimal limite;
 
