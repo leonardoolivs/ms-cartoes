@@ -8,6 +8,6 @@ import org.mapstruct.Mapper;
 public interface CartaoMapper {
 
     Cartao toEntity(CartaoRequestDTO dto);
-    
+
     CartaoRequestDTO toDto(Cartao entity);
 }
